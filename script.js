@@ -1,5 +1,5 @@
 const url =
-  'https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=180&date=15-05-2021'
+  'https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=777&date=13-05-2021'
 
 // const sendGetRequest = async () => {
 //   try {
