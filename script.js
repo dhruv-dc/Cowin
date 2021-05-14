@@ -1,5 +1,5 @@
 const url =
-  'https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=777&date=13-05-2021'
+  'https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=180&date=15-05-2021'
 
 // const sendGetRequest = async () => {
 //   try {
@@ -54,7 +54,6 @@ function getCenters() {
       .get(url)
       .then(function (resp) {
         const data = resp.data.centers
-        var flag = 1
         console.log(data)
         for (var i = 0; i < data.length; i++) {
           for (var j = 0; j < data[i].sessions.length; j++) {
@@ -66,7 +65,7 @@ function getCenters() {
                 data[i].name,
                 data[i].sessions[j].available_capacity
               )
-              alert(
+              console.log(
                 `${data[i].sessions[j].available_capacity} of seats is available`
               )
               console.log(data[i].name + ' name')
@@ -74,16 +73,14 @@ function getCenters() {
                 data[i].sessions[j].available_capacity + ' available capacity'
               )
               console.log(data[i].sessions[j].min_age_limit + ' age')
-              flag = 0
             }
           }
         }
-        if (flag) {
-          setTimeout('location.reload();', 150000)
-        }
+        setTimeout('location.reload();', 8000)
       })
       .catch(function (error) {
-        console.log(error)
+        console.log('In the error ' + error)
+        setTimeout('location.reload();', 8000)
       })
   } catch (error) {
     console.log(error)
